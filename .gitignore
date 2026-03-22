@@ -10,3 +10,6 @@ dist/
 
 # IDEs
 .vscode/
+
+# DB
+chroma_db/
