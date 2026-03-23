@@ -1,4 +1,4 @@
-# HR Policies Agent — Démarrage
+# Démarrage - Agent IA pour les Politiques RH
 
 ## Prérequis
 
