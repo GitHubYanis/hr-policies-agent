@@ -40,7 +40,7 @@
         rows="2"
         [disabled]="isLoading()">
       </textarea>
-      <button (click)="send()" [disabled]="isLoading() || !inputTextModel.trim()">Envoyer</button>
+      <button class="send" (click)="send()" [disabled]="isLoading() || !inputTextModel.trim()">Envoyer</button>
       <button (click)="clearHistory()">Effacer</button>
     </div>
 
