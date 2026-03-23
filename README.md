@@ -4,6 +4,6 @@ Interface de chat permettant aux employés d'interroger les politiques RH intern
  
 ---
  
-![Vue suggestions](images/vue1.png)
+![Vue suggestions](images/step1.png)
  
-![Vue conversation](images/vue2.png)
+![Vue conversation](images/step2.png)
