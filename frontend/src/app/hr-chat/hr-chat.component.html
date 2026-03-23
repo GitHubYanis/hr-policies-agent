@@ -1,0 +1,48 @@
+<div class="chat-section">
+  <h1>Nos Politiques Ressources Humaines</h1>
+  <div class="chat-panel">
+
+    <div class="backend-status" [class.ready]="backendStatus() === 'ready'" [class.error]="backendStatus() === 'error'">
+      <span *ngIf="backendStatus() === 'ready'">En ligne</span>
+      <span *ngIf="backendStatus() === 'error'">Hors-ligne</span>
+      <span *ngIf="backendStatus() === 'unknown'">Connexion…</span>
+    </div>
+
+    <div class="messages-area">
+
+      <div *ngIf="showSuggestions()" class="empty-state">
+        <h2>Comment puis-je vous aider ?</h2>
+        <div class="suggestions-grid">
+          <button *ngFor="let q of suggestedQuestions" (click)="useSuggestion(q)">{{ q }}</button>
+        </div>
+      </div>
+
+      <div *ngFor="let msg of messages()"
+           [class.user-msg]="msg.role === 'user'"
+           [class.assistant-msg]="msg.role === 'assistant'">
+        <div class="bubble" [class.error]="msg.error">
+          <span *ngIf="msg.loading">En cours...</span>
+          <span *ngIf="!msg.loading">{{ formatContent(msg.content) }}</span>
+          <div *ngIf="msg.sources?.length" class="sources">
+            <span *ngFor="let s of msg.sources">Section {{ s.section_number }} p.{{ s.page_number }}</span>
+          </div>
+        </div>
+      </div>
+
+      <div #messagesEnd></div>
+    </div>
+
+    <div class="input-bar">
+      <textarea
+        [(ngModel)]="inputTextModel"
+        (keydown)="onKeyDown($event)"
+        placeholder="Posez votre question…"
+        rows="2"
+        [disabled]="isLoading()">
+      </textarea>
+      <button (click)="send()" [disabled]="isLoading() || !inputTextModel.trim()">Envoyer</button>
+      <button (click)="clearHistory()">Effacer</button>
+    </div>
+
+  </div>
+</div>
