@@ -1,5 +1,8 @@
 # Document Technique — Agent IA pour les Politiques RH
 
+![alt text](images/vue1.png)
+![alt text](images/vue2.png)
+
 ## 1. Architecture de l'agent
  
 ### 1.1 Vue d'ensemble
