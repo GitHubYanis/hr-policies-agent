@@ -3,10 +3,6 @@
 Interface de chat permettant aux employés d'interroger les politiques RH internes en langage naturel, basée par une architecture RAG (ChromaDB + GPT-4o-mini).
  
 ---
-
-Vidéo explicative du projet: https://www.youtube.com/watch?v=8uzzgblZhZ8
-
----
  
 ![Vue suggestions](images/step1.png)
  
